@@ -3,7 +3,6 @@ var Schema = mongoose.Schema;
 
 var Restaurant = new Schema(
     {
-        _id: ObjectId,
         name: {type: String, required: true, max: 100},
         cuisine: {type: String, required: true, max 100},
         street: {type: String},
@@ -13,6 +12,19 @@ var Restaurant = new Schema(
     } );
 
 
+// Virtual for restaurants name
+RestaurantSchema
+    .virtual('name')
+    .get(function ()  {
+        return this.name;
+    });
 
+// Virtual for restaurants URL
+RestaurantSchema
+    .virtual('url')
+    .get(function()  {
+        return '/catalog/restaurant/' + this._id;
+    });
 
-var restaurantModel = mongoose.model('Restaurant', Restaurant ); module.exports = restaurantModel;
+//Export model
+model.exports = mongoose.model('Restaurant', RestaurantSchema);

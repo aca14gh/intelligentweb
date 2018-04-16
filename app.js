@@ -11,7 +11,7 @@ var users = require('./routes/users');
 var app = express();
 
 var MongoClient = require('mongodb').MongoClient;
-//Create a database named "mydb":
+// create a database named "mydb":
 var url = "mongodb://localhost:27017/mydb";
 
 MongoClient.connect(url, function(err, db) {

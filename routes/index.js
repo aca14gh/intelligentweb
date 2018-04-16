@@ -1,5 +1,8 @@
 var express = require('express');
 var router = express.Router();
+var bodyParser = require('body-parser');
+
+var restaurant = require('../controllers/restaurant');
 
 // POST request to update restaurant
 router.post('restaurant/:id/update', restaurant_controller.restaurant_update_post);
@@ -19,6 +22,8 @@ router.get('/restaurant', function(req, res, next) {
 router.get('/welcome', function(req, res, next) {
     res.render('welcome', { title: 'COM3504' });
 });
+
+router.post('/insert',restaurant.insert);
 
 module.exports = router;
 

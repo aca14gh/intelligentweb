@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
       <script src="index.js"></script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7fd4a6BjT-r1SWzOfCkWS-VSD9izQo6E&callback=initMap" async defer></script>
   </head>
+
   <body>
   <div id="searchBar">
   <centre>
@@ -16,5 +19,49 @@
       </form>
   </centre>
   </div>
+
+  <div class="">
+    <p>HELLO</p>
+  </div>
+
+  <h1>Reviews aligned left</h1>
+
+  <div class="container-fluid"> <!-- one single restaurant block-->
+
+      <div class="row"> <!-- icon name     score -->
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"><p> <%- restaurantName %> </p></div >
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"><h3>Joseph Blogs</h3></div >
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">Overall Score: 7.9</div >
+      </div >
+
+      <div class="row"> <!-- wordy review -->
+          <div class="col"> wordy review </div>
+      </div>
+
+      <div class="row"> <!-- reviews scores -->
+          <div class="col-md-3">
+              <p> Taste:  <%- Review_Taste %> </p>
+          </div >
+          <div class="col-md-3">
+              <p> Hygiene: <%- Review_Hygiene %> </p>
+          </div >
+          <div class="col-md-3">
+              <p> Service: <%- Review_Service %> </p>
+          </div >
+      </div>
+
+      <div class="row"> <!-- recomend -->
+          <div class="col-md-3">review 1 taste</div >
+          <div class="col-md-3">Yes / No</div >
+      </div >
+
+
+  </div>
+
+  <div id="map">
+
+  </div>
+
+
   </body>
 </html>

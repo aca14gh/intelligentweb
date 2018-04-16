@@ -1,26 +1,73 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-  <div id="searchBar">
-  <centre>
+    <script src="restaurant.js"></script>
+
+</head>
+<body>
+<div >
     <h1>Welcome to Best Restaurant</h1>
     <br/>
-      <form>
-          <input type="text" placeholder="<%= jeff %>" name="search">
-          <button type="submit">SEARCH</button>
-      </form>
-  </centre>
-  </div>
+    <form>
+        <input type="text" placeholder="..." name="search">
+        <button type="submit">SEARCH</button>
+    </form>
+
+</div>
 
 <div>
     <p>cover pic</p>
 </div>
 
+<div>
+    <p>bio</p>
+</div>
+
+<h1>Reviews aligned left</h1>
+
+<div class="container-fluid"> <!-- one single review block-->
+
+    <div class="row"> <!-- icon name     score -->
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"><p> icaon </p></div >
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"><h3>Joseph Blogs</h3></div >
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">Overall Score: 7.9</div >
+    </div >
+
+    <div class="row"> <!-- wordy review -->
+        <div class="col"> wordy review </div>
+    </div>
+
+    <div class="row"> <!-- reviews scores -->
+        <div class="col-md-3">
+            <p> Taste:  <%- Review_Taste %> </p>
+        </div >
+        <div class="col-md-3">
+            <p> Hygiene: <%- Review_Hygiene %> </p>
+        </div >
+        <div class="col-md-3">
+            <p> Service: <%- Review_Service %> </p>
+        </div >
+    </div>
+
+    <div class="row"> <!-- recomend -->
+        <div class="col-md-3">review 1 taste</div >
+        <div class="col-md-3">Yes / No</div >
+    </div >
 
 
-  </body>
+</div>
+
+
+
+<div>
+    <p>Photos aligned right</p>
+</div>
+
+<div>
+    <p>add a review section</p>
+</div>
+
+</body>
 </html>

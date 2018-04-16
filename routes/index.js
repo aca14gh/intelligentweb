@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-var bodyParser = require("body-parser");
 
 /* GET home page. */
 
@@ -8,7 +7,6 @@ var bodyParser = require("body-parser");
 /* GET home page. */
 
 var words = ["Search...", "Keyword", "Restraunt Name", "Cuisine i.e.Chinese", "postcode"];
-var character = require('../controllers/characters');
 
 var jeff = pickWord(words);
 
@@ -23,11 +21,16 @@ router.get('/', function(req, res, next) {
 });
 
 
+/* GET restaurant page. */
+router.get('/restaurant', function(req, res, next) {
+    res.render('restaurant', { title: 'RESTAURANT' });
+});
+
+
 
 /* GET home page. */
-router.get('/insert', function(req, res, next) {
-    res.render('insert', { title: 'My Form' });
+router.get('/welcome', function(req, res, next) {
+    res.render('welcome', { title: 'COM3504' });
 });
-router.post('/insert',character.insert);
 
 module.exports = router;

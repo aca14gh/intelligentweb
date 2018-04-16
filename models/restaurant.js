@@ -8,7 +8,6 @@ var restaurantSchema = new mongoose.Schema(
         street: {type: String},
         postcode: {type: String},
         phone: {type: Number}
-
     });
 
 //Export model

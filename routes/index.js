@@ -1,32 +1,19 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
+// POST request to update restaurant
+router.post('restaurant/:id/update', restaurant_controller.restaurant_update_post);
 
+// GET request for one restaurant
+router.get('/restaurant/:id', restaurant_controller,restaurant_detail);
 
-/* GET home page. */
-
-var words = ["Search...", "Keyword", "Restraunt Name", "Cuisine i.e.Chinese", "postcode"];
-
-var jeff = pickWord(words);
-
-function pickWord(wordsArray) {
-    var rand = wordsArray[Math.floor(Math.random() * wordsArray.length)];
-    var pickedWord = wordsArray[rand];
-    return pickedWord;
-}
-
-router.get('/', function(req, res, next) {
-    res.render('Index', { jeff: jeff, title: 'My Class' });
-});
-
+// GET request for list of all restaurants
+router.get('/restaurants', restaurant_controller.restaurant_list);
 
 /* GET restaurant page. */
 router.get('/restaurant', function(req, res, next) {
     res.render('restaurant', { title: 'RESTAURANT' });
 });
-
-
 
 /* GET home page. */
 router.get('/welcome', function(req, res, next) {
@@ -34,3 +21,5 @@ router.get('/welcome', function(req, res, next) {
 });
 
 module.exports = router;
+
+

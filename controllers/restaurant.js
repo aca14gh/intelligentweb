@@ -1,17 +1,13 @@
 const models = require('../models/restaurant');
 
 // noinspection JSAnnotator
-//module.exports = {
-
-exports.list = function(reg, res)  {
-    Restaurant.find().sort('-created').populate('cuisine').exec(function(err, restaurants)  {
-        if (err)  {
-            return res.status(400).send({
-                message: errorHandler.getErrorMessage(err)
-            });
-        }
-        else  {
-            res.jsonp(restaurants);
-        }
-    });
+module.exports = {
+    findRest: function(req, res, next)  {
+        models.Restaurant.find(function (err, results)  {
+            if (err) {
+                return console.error(err);
+            }
+            console.log(results);
+        });
+    }
 };

@@ -13,13 +13,13 @@ var one = new r.Restaurant({
     name: "Bella",
     desc: "Sheffield number 1 italian",
     cuisine: "italian",
-    street_no:"",
-    street_name:"",
-    postcode:"",
-    phone:"",
-    url:"",
-    lon:"",
-    lat:""
+    street_no: "7",
+    street_name: "street",
+    postcode: "s13 8sb",
+    phone: "01142387254",
+    url: "url",
+    lon: "12345",
+    lat: "12345"
 });
 
 one.save(function(err, one) {

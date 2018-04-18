@@ -4,7 +4,7 @@
 <head>
     <title><%= title %></title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src='index.ejs'></script>
+    <script src='index.js'></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7fd4a6BjT-r1SWzOfCkWS-VSD9izQo6E&callback=initMap" async defer></script>
 </head>
 
@@ -14,7 +14,7 @@
         <h1>Welcome to Best Restaurant</h1>
         <br/>
         <form>
-            <input type="text" placeholder="<%- jeff %>" name="search">
+            <input type="text" placeholder="hi" name="search">
             <button type="submit">SEARCH</button>
         </form>
     </centre>
@@ -26,11 +26,16 @@
 
 <h1>Reviews aligned left</h1>
 
+
+<% console.log("in loopp"); %>
+<% allRests.forEach(function(rest) { %>
+
+
 <div class="container-fluid"> <!-- one single restaurant block-->
 
-    <div class="row"> <!-- icon name     score -->
-        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"><p> <%- restaurantName %> </p></div >
-        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"><h3>Joseph Blogs</h3></div >
+    <div class="row"> <!-- icon name  score -->
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"><p> <%= rest.restaurantName %> </p></div >
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"><h3>Joseph Blogs <%= rest.restaurantName %></h3></div >
         <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">Overall Score: 7.9</div >
     </div >
 
@@ -57,6 +62,8 @@
 
 
 </div>
+<% }); %>
+
 
 <div id="map">
 

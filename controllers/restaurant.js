@@ -10,7 +10,7 @@ module.exports = {
             }
             console.log(results);
             if(results !== null)  {
-                res.render(results);
+                res.render('index', {allRests: results});
             }
             else  {
                 res.render('home', {foundRest: false, error: "cannot find details"});

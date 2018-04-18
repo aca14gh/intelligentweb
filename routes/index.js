@@ -18,6 +18,11 @@ router.get('/search_rest', function(reg, res, next)  {
 // GET request for list of all restaurants
 //router.get('/restaurants', restaurant_controller.restaurant_list);
 
+/* GET search page. */
+router.get('/', function(req, res, next) {
+    res.render('index', { title: 'search', allRest: restaurant.findRest() });
+});
+
 /* GET restaurant page. */
 router.get('/restaurant', function(req, res, next) {
     res.render('restaurant', { title: 'RESTAURANT' });

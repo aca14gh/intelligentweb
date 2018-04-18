@@ -10,12 +10,19 @@ db.once('open', function() {
 var r = require('../restaurant');
 
 var one = new r.Restaurant({
-    name: "hi",
-    cuisine: "italian"
+    name: "Bella",
+    desc: "Sheffield number 1 italian",
+    cuisine: "italian",
+    street_no:"",
+    street_name:"",
+    postcode:"",
+    phone:"",
+    url:"",
+    lon:"",
+    lat:""
 });
 
 one.save(function(err, one) {
     if(err) return console.error(err);
 });
 
-//MAKE FAKE DATA FOR COLLECTION*

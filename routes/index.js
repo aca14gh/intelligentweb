@@ -11,8 +11,8 @@ var restaurant = require('../controllers/restaurant');
 //router.get('/restaurant/:id', restaurant_controller,restaurant_detail);
 
 // GET request for finding relevant restaurants
-router.get('/search_res', function(reg, res, next)  {
-    res.render('search_res', { title: 'Your Search Results'});
+router.get('/search_rest', function(reg, res, next)  {
+    res.render('search_rest', { title: 'Your Search Results'});
 });
 
 // GET request for list of all restaurants
